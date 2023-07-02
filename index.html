@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input />
+    <p>Text appearing after 3 seconds of you stop typing </p>
+    <p style="color:red ; "></p>
+    <script>
+         let input = document.getElementsByTagName("input")
+                        let p = document.getElementsByTagName("p")
+                        let setId // declare in global scope 
+
+                        function delay(value) {
+                            console.log(value)
+
+                            // let setId // dont declare here every time come here and see undefined , give higher scope
+                            clearTimeout(setId)
+
+                                setId = setTimeout(function() {
+                                    p[1].textContent = value
+                                }, 3000);
+                                }
+
+                            let i = input[0]
+
+                            i.addEventListener('keyup', (event) => {
+                                delay(event.target.value)
+                            })
+
+    </script>
+</body>
+</html>
